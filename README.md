@@ -19,7 +19,7 @@ The assembler will start the processing of each file (specify WITHOUT extension!
 
 ## Computer and Language Structure
 
-#### Computer Structure
+### Computer Structure
 In our imaginary computer the processor contains 16 general registers: r0, r1, r2 ... r15.
 
 The size of each register is 20 bits, the least significant (LSB) bit will be bit number 0, and the most significant bit (MSB)
@@ -31,7 +31,7 @@ The memory size of the computer is 8192 cells (represented by 0-8191), and each 
 The computer supports integer numbers and also supports characters represented by ASCII code.
 
 
-#### Word and Sentence Structure
+### Word and Sentence Structure
 There are 4 kinds of sentences the assembler knows:
 
 1. Empty Sentence - A line contains only whitespaces.
@@ -40,18 +40,16 @@ There are 4 kinds of sentences the assembler knows:
 
 3. Instruction Sentence - Variables assignment and declaration.
 
-4. Command Sentence - Creates an action for the machine to execute upon running the program.
+4. Command Sentence - Creates an action for the machine to execute upon running the program. Usage of labels is optional. A label is any word (reserved words not allowed) which is declared at the beginning of the sentence and 
 
-Usage of labels is optional. A label is any word (reserved words not allowed) which is declared at the beginning of the sentence and 
-
-ends with `:`. For example `myLabel:`.
+ends with `:` - For example `myLabel:`.
 
 Line maximum length is 80. 
 
 Each computer instruction contains between 1-6 words, depending on the addressing method. 
 
 
-#### Addressing methods
+### Addressing methods
 There are 4 different addressing methods:
 
 1. **Immediate** - The instruction operand will be an immediate number.
@@ -65,7 +63,7 @@ receive in parentheses a number of reference register.
 4. **Register direct** - The instruction operand will be one of the system registers.
 
 
-#### Command Sentence
+### Command Sentence
 
 Command Sentence may or may not start with a label. Valid commands are: 
 
@@ -119,12 +117,12 @@ Then (assuming no errors are detected), the second transition will be made in wh
 
 translated into the assembly language of the imaginary computer.
 
-At the end of the proccess, assembler will output 4 files:
+**At the end of the proccess, assembler will output 4 files:**
 
-1. **.am** file: Will contain the instructions after writing macros.
+1. `.am` file Will contain the instructions after writing macros.
 
-2. **.ob** file: Will contain the instructions in the assembly language.
+2. `.ob` file Will contain the instructions in the assembly language.
 
-3. **.ent** file: Will contain the labels classified as ent.
+3. `.ent` file Will contain the labels classified as ent.
 
-4. **.ext** file: Will contain the labels classified as ext (externals).
+4. `.ext` file Will contain the labels classified as ext (externals).
